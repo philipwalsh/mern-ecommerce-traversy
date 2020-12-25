@@ -80,7 +80,7 @@ const products = [
 ]
 
 // es syntax
-// export default products
+export default products
 
 // common js syntax
-module.exports = products
+//module.exports = products

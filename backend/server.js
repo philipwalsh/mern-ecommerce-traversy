@@ -1,8 +1,18 @@
-const express = require('express')
-const products = require('./data/products')
+import express from 'express'
+import dotenv from 'dotenv'
+import products from './data/products.js'
+
+
+
+
+
 const app = express()
 
-app.listen(5000, console.log('server running on port 5000'))
+dotenv.config()
+const PORT = process.env.PORT || 5000
+const CURRENT_ENV = process.env.NODE_ENV
+
+app.listen(PORT, console.log(`server running on port ${PORT} in ${CURRENT_ENV} mode`))
 
 app.get("/", (req, res) => {
     res.send("api running...")
